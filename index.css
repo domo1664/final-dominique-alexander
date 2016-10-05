@@ -1,0 +1,729 @@
+/*Created by: Dominique Alexander
+* Per Scholas General Assembly Web Development Immersive
+* Date: 9.05.2016
+* Description: This website is to show an app developed by 
+* yours truly... Me. Also it is to showcase all of the cool
+* and interesting things I have learned so far at Per Scholas
+* Each of these fonts are free fonts that can be found
+* on dafont.com a site that host free fonts.
+* I used percentages for the majority of width and heights 
+* to make the page scale down with style and grace*/
+
+/* Defined font pixel*/
+@font-face{
+	font-family: pixel;
+	src: url(pixel.ttf);
+}
+/*Defined font mario*/
+@font-face{
+	font-family: mario;
+	src: url(mario.ttf);
+}
+/*This font is only used for the letter Q in a bold situation*/
+@font-face{
+	font-family: Q;
+	src: url(q.ttf);
+}
+/*The style for the letter Q on each nav menu*/
+#Q {
+	font-family: Q;
+	font-size:1.8525vw;
+}
+/*Styles the letter q in the header*/
+#QH {
+	font-family: Q;
+	font-size:6vw;
+	margin-top: -4%;
+	position:absolute;
+}
+/*This is the background for the modal with a transition/fade in on the opacity*/
+.overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.7);
+  transition: opacity 500ms;
+  visibility: hidden;
+  opacity: 0;
+}
+/*This is the class that is added to the class overlay when the anchor tag is clicked in merch.html*/
+.overlay:target {
+  visibility: visible;
+  opacity: 1;
+}
+/*This is the box that contains the header and image for the modal*/
+.popup {
+  margin: 70px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 5px;
+  width: 30%;
+  position: relative;
+  transition: all 5s ease-in-out;
+}
+/*styles the header text in the modal*/
+.popup h2 {
+  color: #133E6C;
+  font-size:3vw;
+  font-family: pixel;
+}
+/*Styles and positions the "x" used to close the modal*/
+.popup .close {
+  position: absolute;
+  top: 0;
+  right: 3%;
+  transition: all 200ms;
+  font-size: 4vw;
+  font-weight: bold;
+  text-decoration: none;
+  color: #133E6C;
+}
+/*Hover effect on the close button for the modal*/
+.popup .close:hover {
+  color: #1C77C3;
+}
+/*Styles the image that is display in the modal*/
+#content {
+  max-height: 100%;
+  max-width: 100%;
+  overflow: auto;
+  border-radius: 2%;
+}
+
+/*Styles the anchor tag with font, color, margins and declares animation*/
+#enter a{
+	font-family: mario;
+	text-transform:uppercase;
+	position:absolute;
+	text-decoration: none;
+	text-shadow:1px -5px #0072BB;
+	font-size: 4vw;
+	top:65%;
+	left: 39%;
+	z-index:1;
+	color: #2F52E0;
+	padding:1%;
+	animation: blink 1s infinite;
+}
+/*When you hover over the anchor tag it triggers the animation fill*/
+#enter a:hover{
+	animation: fill .4s forwards ease-in-out;
+}
+/*Adds style to the h1 tag in story.html*/
+#header{
+	color:#2F52E0;
+	text-shadow:1px -5px #0072BB;
+	font-size: 4vw;
+	font-family:mario;
+	text-transform:uppercase;
+	position:absolute;
+	top:15vh;
+	left: 32.5%;
+	animation: fade 1s ease-in;
+}
+/*Adds style to h1 tag in gallery.html*/
+#header1{
+	color:#2F52E0;
+	text-shadow:1px -5px #0072BB;
+	font-size: 4vw;
+	font-family:mario;
+	text-transform:uppercase;
+	position:absolute;
+	letter-spacing:0.2vw;
+	top:15vh;
+	left: 36%;
+	animation: fade 1s ease-in;
+}
+/*Adds style to h1 tag in merch.html*/
+#header2{
+	color:#2F52E0;
+	text-shadow:1px -5px #0072BB;
+	font-size: 4vw;
+	font-family:mario;
+	text-transform:uppercase;
+	position:absolute;
+	letter-spacing:0.2vw;
+	top:15vh;
+	left: 38%;
+	animation: fade 1s ease-in;
+}
+/*Adds style to h1 tag in faq.html*/
+#header3{
+	color:#2F52E0;
+	text-shadow:1px -5px #0072BB;
+	font-size: 4vw;
+	font-family:mario;
+	text-transform:uppercase;
+	position:absolute;
+	letter-spacing:0.2vw;
+	top:15vh;
+	left: 42%;
+	animation: fade 1s ease-in;
+}
+/*The div that make the gifs scrollable on the x-axis*/
+#flow{
+	overflow-x:auto;
+	white-space: nowrap;
+	float:left;
+	height:20%;
+	width:100%;
+	margin: 20px 0;
+	background:#2A2D34;
+}
+
+/*Styles the image to stay a certain width within the flow div on gallery page*/
+#flow img{
+	height:20%;
+	width:20%;
+	margin-right:2%;
+	cursor:pointer;
+	transition: filter 1s;
+}
+/*Change opacity og gallery images on hover*/
+#flow img:hover{
+	filter: drop-shadow(0 10px 10px rgba(255, 255, 255, 0.5));
+}
+
+/*Gives each paragraph a reasonable amount of space above it. And justifies the text with animation*/
+#story p{
+	top:5%;
+	text-align: justify;
+	color: #133E6C;
+	font-size: 2vw;
+	letter-spacing: 0.2vw;
+}
+/*changes the cursor to the hand cursor for the questions in faq.html to show they are clickable*/
+.quest p{
+	cursor: pointer;
+}
+/*Styles the opacity of the picture discription in gallery.html*/
+#para{
+	opacity:0;
+}
+
+/*Centers the div and set the width*/
+#story{
+	width: 50%;
+	top:200px;
+	left:24%;
+	position:absolute;
+	opacity:0;
+} 
+/*Styles the answers to the questions in faq.html*/
+#story span{
+	display: block;
+	color: #F76C5E;
+}
+
+/* Centers the table usng the div tag and set the width and makes it scrollable */
+#tab{
+	width: 70%;
+	height: 60%;
+	top:200px;
+	left:15%;
+	position:absolute;
+	opacity:0;
+	overflow-y: auto;
+}
+/* Styles the font color and the background of all input fields with the type text */
+input[type="text"] {
+	width: 100%;
+	background: #1C77C3;
+	border-style: none;
+	color: white;
+	font-family: pixel;
+	font-size: 2vw;
+	outline:none;
+	margin-bottom:4%;
+	height:4vw;
+}
+/*Styles the submit button on the contact page to have no border 
+and no outline when you click the button */
+input[type="submit"] {
+	width: 30%;
+	height: 2vw;
+	color:white;
+	background:#1C77C3;
+	border:none;
+	outline:none;
+	font-family:pixel;
+	font-size: 1vw;
+	letter-spacing: 0.5vw;
+	margin-top: 2%;
+}
+/*Changes the background color of the submit button on hover*/
+input[type="submit"]:hover{
+	background:#133E6C;
+}
+/*Styles the input field of the cart/calcultor and center it in the div container*/
+#inputs{
+	width:55%;
+	border-radius:4px;
+	left:22.5%;
+	position:absolute;
+	margin-top:3%;
+	text-align: right;
+}
+/*Centers the div container and gives it round corners and a background color*/
+#cart{
+	animation: hover 1.25s infinite ease-in-out;
+	background:#2F52E0;
+	width:60%;
+	border-radius:2%;
+	margin-bottom:5%;
+	margin-left: 20%;
+}
+
+/*Controls the diffrent of the animation on the cart/calculator*/
+@keyframes hover{
+
+	0%{
+		box-shadow: 0 10px 16px 0 rgba(0, 0, 0, 0.2), 0 8px 20px 0 rgba(0, 0, 0, 0.19);
+	}
+
+	50%{
+		box-shadow: none;
+	}
+	100%{
+		box-shadow: 0 10px 16px 0 rgba(0, 0, 0, 0.2), 0 8px 20px 0 rgba(0, 0, 0, 0.19);
+	}
+}
+/*Styles the opacity size and margins of the buttons on the cart/calculator*/
+.calc{
+	 width:25%;
+	 height:25%;
+	 margin: 25% 5% 5% 0;
+	 border-radius:10%;
+	 cursor:pointer;
+	 opacity:0.5;
+}
+/*Bringe each button to full opacity on hover*/
+.calc:hover{
+	opacity:1;
+}
+
+/*Gives the margin to the top and right of each 
+image in the cart/calculator with the row class*/
+.row{
+	margin: 0 5% 5% 0;
+}
+/*Styles the operator button add with size, round corners, 
+text color, margins, and background color also removes lines 
+around button when clicked*/
+.add{
+	width:7vw;
+ 	height:6vw;
+	border-radius:10%;
+	cursor:pointer;
+	border:none;
+	position:absolute;
+	outline:none;
+	margin-left:-.25%;
+	color:white;
+	background:#F76C5E;
+	font-size: 4vw;
+	padding:1%;
+	opacity:0.5;
+}
+/*Bringe button to full opacity on hover*/
+.add:hover{
+	opacity:1;
+}
+/*Styles, position and colors the text and background of the clear button*/
+.c{
+	width:10vw;
+ 	height:6vw;
+	border-radius:10%;
+	cursor:pointer;
+	border:none;
+	outline:none;
+	color:white;
+	background:#F76C5E;
+	font-size: 2vw;
+	font-family:pixel;
+	margin-left: 3%;
+	padding:1%;
+	opacity:0.5;
+}
+/*Bringe button to full opacity on hover*/
+.c:hover{
+	opacity:1;
+}
+
+/*Additional class added to checkout button to change the font
+ without effect other buttons*/
+.d{
+	font-size:1.4vw;
+}
+/*Styles the size of button and margins and removes line around button when clicked*/
+.equal{
+	width:7vw;
+ 	height:6vw;
+	border-radius:10%;
+	cursor:pointer;
+	border:none;
+	font-family: pixel;
+	position:absolute;
+	outline:none;
+	color:white;
+	margin-left: 17%;
+	background:#F76C5E;
+	font-size: 1.5vw;
+	padding:1%;
+	opacity:0.5;
+}
+/*Bringe button to full opacity on hover*/
+.equal:hover{
+	opacity:1;
+}
+/*Styles the height and width of the message input field on the contact page*/
+textarea{
+	height: 10vw;
+	width:100%;
+	border:none;
+	outline:none;
+	color:white;
+	background: #1C77C3;
+	font-family:pixel;
+	font-size:2vw;
+	resize:none;
+}
+
+/*Centers the form on the contact page*/
+form{
+	color: #133E6C;
+	font-size:2vw;
+	margin-left:10%;
+	margin-top: 10%;
+}
+
+/*Styles the footer on the Merchandise Page*/
+#merch{
+	text-align:center;
+	background-color:#2C82DB;
+	font-size:2vw;
+	width: 70%;
+	left:15%;
+	position: absolute;
+	margin-top:93vh;
+	opacity:0;
+}
+/*Styles the footer tag for every page*/
+footer{
+	text-align:center;
+	background-color:#2C82DB;
+	font-size:2vw;
+	padding:1%;
+	color:#133E6C;
+}
+/*positions the google play badge to the right of the footer*/
+footer img{
+	width:20%;
+	height:100%;
+	position:absolute;
+	right:0%;
+	top:0;
+}
+
+/*Styles the opacity of the image in the footers*/
+footer #foot{
+	opacity:0.5;
+	transition: all 1s;
+}
+/*creates hover effect for image in the footer*/
+footer #foot:hover{
+	opacity:1;
+}
+/*Footer text color*/
+footer #link{
+	color: #133E6C;
+	text-decoration: none;
+	transition:background-color linear 0.15s;
+}
+
+/*adds background to the anchor on the footer*/
+footer #link:hover{
+	background-color: #ABD2FA;
+	padding:1.5%;
+}
+/*Controls the blink animation and make the text flash*/
+@keyframes blink{
+	0%{
+		text-shadow:1px -5px #0072BB;
+		color: #2F52E0;
+	}
+	50%{
+		text-shadow:1px -5px #274690;
+		color: #1B264F;
+	}
+	100%{
+		text-shadow:1px -5px #0072BB;
+		color: #2F52E0;
+	}
+
+}
+
+/*Makes every heading fade in with a delay of 3s*/
+@keyframes fade{
+	0%{
+		opacity:0;
+	}
+	50%{
+		opacity:0.3;
+	}
+	100%{
+		opacity:1;
+	}
+}
+
+/*Creates the animation for the landing page*/
+@keyframes fill{
+	0%{
+		width: 0%;
+		height: 1%;
+		background-color: #21295C;
+	}
+	50%{
+		width: 19.5%;
+		height: 1%;
+		background-color: #21295C;
+	}
+
+	100%{
+		width: 19.5%;
+		height: 4.5vw;
+		background-color: #21295C;
+		border-radius:5%;
+	}
+}
+/*The class that styles the header logo on every page except the landing page a.k.a index.html*/
+.icon{
+	top:30%;
+	left:10px;
+	position:absolute;
+	color: white;
+	text-shadow:1px -3px #808782;
+	font-family:mario;
+	text-align: left;
+	font-size:1.4vw;
+	animation: flash 1s infinite;
+}
+/*Controls the animation for the header logo*/
+@keyframes flash{
+	0%{
+		text-shadow:1px -3px #808782;
+		color: white;
+	}
+	50%{
+		text-shadow:1px -3px #595959;
+		color: #F2F2F2;
+	}
+	100%{
+		text-shadow:1px -3px #808782;
+		color: white;
+	}
+}
+/*Styles the list to appear in line*/
+.list li {
+	display: inline;
+	margin: 0px 50px 0px 0px;
+}
+/* Style the entire nav to center text and add padding*/
+.list{
+	list-style: none;
+	text-align:center;
+}
+/*Nav container*/
+.menu{
+	width:100%;
+	position:fixed;
+	z-index:2;
+	background: #2C82DB;
+	border-radius: 3px;
+}
+
+/*Style the anchor tag with text-shadow, color of text, and font size with a little animation*/
+.menu a {
+	text-decoration: none;
+	color: white;
+	text-shadow:1px -3px #808782;
+	font-family:mario;
+	text-align: left;
+	font-size:1.4vw;
+	animation: flash 1s infinite;
+	transition:background-color linear 0.15s;
+}
+/*Changes the background color of the anchor tag*/
+.menu a:hover{
+	padding:1.8%;
+	background-color: #ABD2FA;
+}
+/*Hides the nav until the width is a certain amount of pixels*/
+.toggle{
+	display:none;
+}
+/*Stretches the video to fit the entire screen*/
+#vid{
+	background-size:cover;
+	background-position: fixed;
+    min-height: 100%;
+    min-width: 100%
+    bottom:0;
+	-webkit-filter: blur(10px);
+	z-index:-1;
+}
+
+/*Styles the body to removes any margins*/
+body{
+	margin:0;
+	padding:0;
+	font-family: pixel;
+	text-transform: uppercase;
+}
+/*Align pictures in the table to be centered in the cells*/
+td{
+	text-align:center;
+	padding-bottom: 10%;
+}
+
+
+/*Style images in the gallery*/
+.merch{
+	width: 70%;
+	height: 25vw;
+	border-radius: 2%;
+	transition: opacity .5s linear;
+}
+/*Changes opacity of image when the user hovers over it*/
+.merch:hover{
+	opacity:0.5;
+}
+
+/*Displays the mobile nav bar when the screen width is 880px
+Drag the browser window to a width smaller than 880px to see effects of this css*/
+@media (max-width: 880px){
+	.menu .icon{
+		display:none;
+	}
+
+	.list {
+		display:none;
+	}
+	.list li{
+		display: block;
+		margin:0;
+		padding:10px;
+	}
+	/*gives mobile menu button a background color that matches the regular nav*/
+	.toggle{
+		background-color: #2C82DB;
+		padding:2% 2.2%;
+		font-size:3vw;
+		display:inline-block;
+		border-radius:5px;
+		color: #133E6C;
+		text-decoration:none;
+		border:0;
+		cursor: pointer;
+		position:fixed;
+		z-index: 2;
+	}
+	/*class added to the nav tag with jquery's toggleClass funtion*/
+	.mobi {
+		display:block;
+		text-align:left;
+	}
+	/*Sets width to the menu also create space between menu and button*/
+	.menu{
+		width:155px;
+		position:fixed;
+		margin-top: 10%;
+		z-index:2;
+		font-size:1.4vw;
+	}
+	
+	/*Changes background color when users hover over menu item*/
+	.menu a:hover{
+		text-decoration:none;
+		padding:8%;
+		background-color: #ABD2FA;
+	}
+	/*changes the text shadow to look responsive for different screen size*/
+	.menu a{
+		color: white;
+		text-shadow:1px -2px #808782;
+		animation: flash 1s infinite;
+	}
+
+	/*Controls the animation for the nav*/
+	@keyframes flash{
+		0%{
+			text-shadow:1px -2px #808782;
+			color: white;
+		}
+		50%{
+			text-shadow:1px -2px #595959;
+			color: #F2F2F2;
+		}
+		100%{
+			text-shadow:1px -2px #808782;
+			color: white;
+		}
+	}
+	/*Changes the header text shadow to look well on smaller screens*/
+	#header{
+		text-shadow: 1px -3px #0072BB;
+		top:5%;
+	}
+	/*Changes the header text shadow to look well on smaller screens*/
+	#header3{
+		text-shadow: 1px -3px #0072BB;
+		top:5%;
+	}
+	/*Changes the header text shadow to look well on smaller screens*/
+	#header2{
+		text-shadow: 1px -3px #0072BB;
+		top:5%;
+	}
+
+	/*Changes the header text shadow to look well on smaller screens*/
+	#header1{
+		text-shadow: 1px -3px #0072BB;
+		top:5%;
+	}
+	/*Adjust the top margin of the content on each page when viewed on smaller screens*/
+	#tab, #story{
+		top: 15%;
+	}
+	/*Decreases the height of the margin on top of images in merch.html*/
+	#merch{
+		top:-20vh;
+	}
+
+	#enter a{
+		text-shadow: 1px -3px #0072BB;
+		animation: blink 1s infinite;
+	}
+	/*Decreased the top margin in the form on the contact page*/
+	form{
+		margin-top:5%;
+	}
+	/*Decreased the size of the text shadow for the smaller screen size*/
+	@keyframes blink{
+		0%{
+			text-shadow:1px -3px #0072BB;
+			color: #2F52E0;
+		}
+		50%{
+			text-shadow:1px -3px #274690;
+			color: #1B264F;
+		}
+		100%{
+			text-shadow:1px -3px #0072BB;
+			color: #2F52E0;
+		}
+
+	}
+}
